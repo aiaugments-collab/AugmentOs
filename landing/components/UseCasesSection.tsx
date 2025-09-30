@@ -268,10 +268,7 @@ export default function UseCasesSection() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            Use
-            <span className="text-orange-500 italic"> AugmentOS</span>
-            <br />
-            To
+            How To Use <span className="text-orange-500 italic">AugmentOS</span>
           </motion.h2>
         </div>
 

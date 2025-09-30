@@ -15,7 +15,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-12 md:pt-0">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="w-full h-full" style={{
@@ -23,7 +23,7 @@ export default function HeroSection() {
         }}></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 md:py-0">
         {/* Backed By */}
 
         {/* Main Heading */}
@@ -31,9 +31,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-8"
+          className="mb-4 md:mb-8"
         >
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
             The Enterprise
             <span className="text-orange-500"> AI Browser</span>
           </h1>
@@ -44,7 +44,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed"
+          className="text-lg text-gray-600 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed"
         >
           AugmentOS is an enterprise-grade AI-powered browser that transforms your workflow with intelligent automation. Just describe your task in plain language — it handles all the clicking, typing, and navigating for you. A privacy-first alternative to Chrome, built for the AI era.
         </motion.p>
@@ -54,10 +54,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mb-12"
+          className="mb-4 md:mb-8"
         >
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="flex flex-row gap-3 max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
                 value={email}
@@ -70,7 +70,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg transition-all duration-200 flex items-center justify-center text-sm whitespace-nowrap"
+                className="px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg transition-all duration-200 flex items-center justify-center text-sm whitespace-nowrap w-full sm:w-auto"
               >
                 Join Waitlist
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
