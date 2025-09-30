@@ -1,13 +1,10 @@
 <div align="center">
-<img src="packages/browseros/resources/logo.png" alt="AugmentOS" width="400">
-
-<br></br>
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE)
 <br />
 </div>
 
 ## 
-🌐 AugmentOS is an open-source chromium fork that runs AI agents natively. **Your open-source, privacy-first alternative to Perplexity Comet, Dia**.
+🌐 AugmentOS is a chromium fork that runs AI agents natively.
 
 🔒 Privacy first - use your own API keys or run local models with Ollama. Your data stays on your computer.
 
@@ -27,27 +24,17 @@
 - 🏠 Feels like home - same familiar interface as Google Chrome, works with all your extensions
 - 🤖 AI agents that run on YOUR browser, not in the cloud
 - 🔒 Privacy first - bring your own keys or use local models with Ollama. Your browsing history stays on your computer
-- 🚀 Open source and community driven - see exactly what's happening under the hood
+- 🚀 Community driven - see exactly what's happening under the hood
 - 🤝 MCP store to one-click install popular MCPs and use them directly in the browser bar
 - 🛡️ (coming soon) Built-in AI ad blocker that works across more scenarios!  
 
 ## Demos
 
-### 🤖 AugmentOS agent in action
-![AugmentOS agent in action](docs/videos/browserOS-agent-in-action.gif)
-<br/><br/>
+AugmentOS provides powerful AI-powered browsing capabilities including:
 
-### 💬 Use AugmentOS to chat
-
-![Chat Demo](docs/videos/nxtscape-agent.gif)
-
-<br/><br/>
-
-### ⚡ Use AugmentOS to scrape data
-
-![Data Scraping Demo](docs/videos/browserOS-agent-in-action.gif)
-
-<br/><br/>
+- **AI Agent Automation**: Intelligent agents that can perform complex browsing tasks
+- **Chat Integration**: Seamless AI chat functionality within the browser
+- **Data Scraping**: Automated data extraction and processing capabilities
 
 ## Why We're Building AugmentOS
 
@@ -74,7 +61,7 @@ We love what Brave started, but they've spread themselves too thin with crypto, 
 <details>
 <summary><b>vs Arc/Dia</b></summary>
 <br>
-Many loved Arc, but it was closed source. When they abandoned users, there was no recourse. We're 100% open source - fork it anytime!
+Many loved Arc, but it was closed source. When they abandoned users, there was no recourse. We're community-driven and transparent!
 </details>
 
 <details>
@@ -93,10 +80,10 @@ We'd love your help making AugmentOS better!
 
 ## License
 
-AugmentOS is open source under the [AGPL-3.0 license](LICENSE).
+AugmentOS is licensed under the [AGPL-3.0 license](LICENSE).
 
 ## 
 
 <p align="center">
-Built with ❤️ for the open source community
+Built with ❤️ for the community
 </p>
