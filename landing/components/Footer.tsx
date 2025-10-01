@@ -1,109 +1,316 @@
-'use client'
-
-import Link from 'next/link'
-
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo and Description */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">A</span>
+    <footer role="contentinfo" className="relative z-10">
+      <section aria-label="Site footer" style={{ opacity: 1 }}>
+        <div className="w-full px-16 lg:px-32">
+          <ul 
+            className="grid grid-cols-2 gap-32 md:flex md:justify-between md:gap-64 lg:justify-between pb-16 border-b border-black/10 w-full font-mono uppercase text-xl md:text-2xl lg:text-3xl leading-10 tracking-wider" 
+            style={{ opacity: 1 }}
+          >
+            <li>
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-8">Product</h3>
+              <ul className="mt-8 flex flex-col gap-8">
+                <li>
+                  <a 
+                    className="transition-colors duration-200 text-black/50 hover:text-black text-lg md:text-xl lg:text-2xl" 
+                    title="Features" 
+                    href="/features"
+                  >
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    className="transition-colors duration-200 text-black/50 hover:text-black text-lg md:text-xl lg:text-2xl" 
+                    title="Privacy" 
+                    href="/privacy"
+                  >
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    className="transition-colors duration-200 text-black/50 hover:text-black text-lg md:text-xl lg:text-2xl" 
+                    title="Terms of Use" 
+                    href="/terms"
+                  >
+                    Terms of Use
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-8">Resources</h3>
+              <ul className="mt-8 flex flex-col gap-8">
+                <li>
+                  <a 
+                    className="transition-colors duration-200 text-black/50 hover:text-black text-lg md:text-xl lg:text-2xl" 
+                    title="Help" 
+                    href="/help"
+                  >
+                    Help
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-8">Company</h3>
+              <ul className="mt-8 flex flex-col gap-8">
+                <li>
+                  <a 
+                    className="transition-colors duration-200 text-black/50 hover:text-black text-lg md:text-xl lg:text-2xl" 
+                    title="About Us" 
+                    href="/about"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    className="transition-colors duration-200 text-black/50 hover:text-black text-lg md:text-xl lg:text-2xl" 
+                    title="Careers" 
+                    href="/careers"
+                  >
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    className="transition-colors duration-200 text-black/50 hover:text-black text-lg md:text-xl lg:text-2xl" 
+                    title="Newsletter" 
+                    href="/newsletter"
+                  >
+                    Newsletter
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+           
+
+            <li className="hidden lg:block ml-auto">
+              <a title="AugmentOS" href="https://www.augment.cfd/">
+                <svg className="w-48 h-60 object-contain" width="86" height="103" viewBox="0 0 86 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.01829 60.6241C3.58341 60.6241 3.18075 60.5273 2.8103 60.3175C2.43985 60.1239 2.13383 59.8334 1.89224 59.4785C1.65064 59.1235 1.44126 58.6878 1.2963 58.1714C1.15134 57.6551 1.08691 57.0903 1.08691 56.4771C1.08691 55.8639 1.15134 55.2992 1.2963 54.7828C1.44126 54.2664 1.63453 53.8308 1.89224 53.4758C2.14994 53.1208 2.45596 52.8303 2.8103 52.6367C3.18075 52.4269 3.56731 52.3301 4.01829 52.3301C4.46927 52.3301 4.85582 52.4269 5.22627 52.6367C5.59672 52.8464 5.90274 53.1208 6.14433 53.4758C6.40204 53.8308 6.59531 54.2826 6.74027 54.7828C6.88523 55.2992 6.94966 55.8639 6.94966 56.4771C6.94966 57.0903 6.88523 57.6551 6.74027 58.1714C6.59531 58.6878 6.40204 59.1235 6.14433 59.4785C5.88663 59.8334 5.58061 60.1239 5.22627 60.3175C4.85582 60.5112 4.45316 60.6241 4.01829 60.6241ZM4.01829 59.8819C4.59812 59.8819 5.03299 59.6237 5.3068 59.1235C5.58061 58.6232 5.72557 57.7357 5.72557 56.4771C5.72557 55.2185 5.58061 54.331 5.3068 53.8308C5.03299 53.3305 4.59812 53.0724 4.01829 53.0724C3.43845 53.0724 3.00358 53.3305 2.72977 53.8308C2.45596 54.331 2.311 55.2185 2.311 56.4771C2.311 57.7357 2.45596 58.6232 2.72977 59.1235C3.01969 59.6237 3.43845 59.8819 4.01829 59.8819Z" fill="currentColor"></path>
+                  <path d="M11.2017 59.8158V60.4452H7.8999V59.8158H8.20592C8.44752 59.8158 8.62469 59.7674 8.72133 59.6706C8.81797 59.5738 8.86629 59.3963 8.86629 59.1543V53.797C8.86629 53.555 8.81797 53.3775 8.72133 53.2806C8.62469 53.1838 8.44752 53.1354 8.20592 53.1354H7.8999V52.5061H13.4888V55.3138H13.0217C12.9573 54.8781 12.8768 54.507 12.7802 54.2166C12.6835 53.9261 12.5547 53.7163 12.3936 53.555C12.2325 53.3936 12.0231 53.2806 11.7654 53.2322C11.5239 53.1677 11.2178 53.1354 10.8474 53.1354H10.332C10.187 53.1354 10.0743 53.1677 10.0098 53.2484C9.92931 53.3291 9.8971 53.4259 9.8971 53.5711V56.2659H10.3159C10.7507 56.2659 11.0407 56.1529 11.1534 55.9431C11.2823 55.7334 11.3306 55.2977 11.3306 54.6684H11.846V58.4281H11.3306C11.3306 57.7665 11.2661 57.347 11.1534 57.1372C11.0407 56.9274 10.7507 56.8306 10.3159 56.8306H9.8971V59.1543C9.8971 59.3963 9.94542 59.5738 10.0421 59.6706C10.1387 59.7674 10.3159 59.8158 10.5575 59.8158H11.2017Z" fill="currentColor"></path>
+                  <circle cx="42.6258" cy="57.5742" r="24.9197" stroke="currentColor" strokeWidth="0.763822"></circle>
+                  <circle cx="42.6255" cy="57.5742" r="16.458" stroke="currentColor" strokeWidth="0.763822"></circle>
+                  <circle cx="42.6257" cy="57.5737" r="6.21277" stroke="currentColor" strokeWidth="0.763822"></circle>
+                </svg>
+              </a>
+            </li>
+          </ul>
+
+          <nav 
+            className="w-full h-max flex flex-col lg:flex lg:flex-row lg:justify-between lg:items-end font-mono uppercase text-2xl md:text-3xl lg:text-4xl leading-12 tracking-wider py-24 gap-y-24 px-16 lg:px-32 relative z-10" 
+            aria-label="Footer navigation"
+          >
+            <div 
+              className="flex gap-8" 
+              aria-label="Legal information" 
+              style={{ opacity: 1 }}
+            >
+              <span className="text-2xl">Copyright</span>
+              <span className="text-2xl">© 2025</span>
+            </div>
+
+            <div style={{ opacity: 1 }}>
+              <div className="text-center">
+                <p className="text-2xl md:text-3xl lg:text-4xl leading-12">
+                  Designed and Built by<br />
+                  <a href="https://www.augment.cfd/" className="hover:text-black transition-colors">
+                    Augment Team
+                  </a>
+                </p>
               </div>
-              <span className="text-xl font-semibold text-white">AugmentOS</span>
             </div>
-            <p className="text-gray-400 leading-relaxed max-w-md">
-              We believe browsers should be enterprise-grade and privacy-first — not tracking software for search or ad companies. 
-              The future is agents that automate your work locally and securely. We're building the best browser for that future.
-            </p>
-          </div>
 
-          {/* Product Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-6">Product</h3>
-            <ul className="space-y-4">
-              <li>
-                <a href="#features" className="text-gray-400 hover:text-white transition-colors">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#use-cases" className="text-gray-400 hover:text-white transition-colors">
-                  Use Cases
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-gray-400 hover:text-white transition-colors">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" className="text-gray-400 hover:text-white transition-colors">
-                  Pricing
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-6">Legal</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link href="/security" className="text-gray-400 hover:text-white transition-colors">
-                  Security
-                </Link>
-              </li>
-              <li>
-                <Link href="/compliance" className="text-gray-400 hover:text-white transition-colors">
-                  Compliance
-                </Link>
-              </li>
-            </ul>
-          </div>
+            <div className="flex gap-8" style={{ opacity: 1 }}>
+              <span className="text-2xl">Current Status:</span>
+              <span className="text-2xl">Beta</span>
+            </div>
+          </nav>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 AugmentOS. All rights reserved.
-            </div>
-            
-            {/* Social Links */}
-            <div className="flex items-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                </svg>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                </svg>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+        {/* Spacer */}
+        <div className="lg:mt-40 h-96 md:h-[50vh] lg:h-[65vh]"></div>
+
+        {/* Animated Background SVG */}
+        <div 
+          className="origin-bottom flex items-end -mb-[2vh] z-20 pointer-events-none h-44 md:h-72 lg:h-[65vh] fixed bottom-0 left-0 right-0" 
+          aria-hidden="true" 
+          style={{ transform: "scaleY(0)" }}
+        >
+          <svg className="w-full h-full" viewBox="0 0 1271 599" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_f_3283_101175)">
+              <rect x="1287" y="614" width="174" height="323" transform="rotate(180 1287 614)" fill="url(#paint0_linear_3283_101175)"></rect>
+            </g>
+            <g filter="url(#filter1_f_3283_101175)">
+              <rect x="1146" y="614" width="174" height="404" transform="rotate(180 1146 614)" fill="url(#paint1_linear_3283_101175)"></rect>
+            </g>
+            <g filter="url(#filter2_f_3283_101175)">
+              <rect x="1005" y="614" width="174" height="478" transform="rotate(180 1005 614)" fill="url(#paint2_linear_3283_101175)"></rect>
+            </g>
+            <g filter="url(#filter3_f_3283_101175)">
+              <rect width="174" height="323" transform="matrix(1 0 -5.78527e-07 -1 -16 614)" fill="url(#paint3_linear_3283_101175)"></rect>
+            </g>
+            <g filter="url(#filter4_f_3283_101175)">
+              <rect width="174" height="404" transform="matrix(1 0 -6.17385e-07 -1 125 614)" fill="url(#paint4_linear_3283_101175)"></rect>
+            </g>
+            <g filter="url(#filter5_f_3283_101175)">
+              <rect width="174" height="478" transform="matrix(1 0 -6.17385e-07 -1 266 614)" fill="url(#paint5_linear_3283_101175)"></rect>
+            </g>
+            <g filter="url(#filter6_f_3283_101175)">
+              <rect width="175" height="530" transform="matrix(1 0 -6.17385e-07 -1 407 614)" fill="url(#paint6_linear_3283_101175)"></rect>
+            </g>
+            <g filter="url(#filter7_f_3283_101175)">
+              <rect x="864" y="614" width="175" height="530" transform="rotate(180 864 614)" fill="url(#paint7_linear_3283_101175)"></rect>
+            </g>
+            <g filter="url(#filter8_f_3283_101175)">
+              <rect width="173" height="584" transform="matrix(1 0 -6.17385e-07 -1 549 614)" fill="url(#paint8_linear_3283_101175)"></rect>
+            </g>
+            <defs>
+              <filter id="filter0_f_3283_101175" x="1083" y="261" width="234" height="383" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <filter id="filter1_f_3283_101175" x="942" y="180" width="234" height="464" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <filter id="filter2_f_3283_101175" x="801" y="106" width="234" height="538" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <filter id="filter3_f_3283_101175" x="-46" y="261" width="234" height="383" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <filter id="filter4_f_3283_101175" x="95" y="180" width="234" height="464" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <filter id="filter5_f_3283_101175" x="236" y="106" width="234" height="538" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <filter id="filter6_f_3283_101175" x="377" y="54" width="235" height="590" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <filter id="filter7_f_3283_101175" x="659" y="54" width="235" height="590" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <filter id="filter8_f_3283_101175" x="519" y="0" width="233" height="644" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_3283_101175"></feGaussianBlur>
+              </filter>
+              <linearGradient id="paint0_linear_3283_101175" x1="1374" y1="614" x2="1374" y2="937" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="paint1_linear_3283_101175" x1="1233" y1="614" x2="1233" y2="1018" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="paint2_linear_3283_101175" x1="1092" y1="614" x2="1092" y2="1092" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="paint3_linear_3283_101175" x1="87.0001" y1="0" x2="87.0001" y2="323" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="paint4_linear_3283_101175" x1="87.0001" y1="0" x2="87.0001" y2="404" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="paint5_linear_3283_101175" x1="87.0001" y1="0" x2="87.0001" y2="478" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="paint6_linear_3283_101175" x1="87.5002" y1="0" x2="87.5002" y2="530" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="paint7_linear_3283_101175" x1="951.5" y1="614" x2="951.5" y2="1144" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="paint8_linear_3283_101175" x1="86.5002" y1="0" x2="86.5002" y2="584" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#340B05"></stop>
+                <stop offset="0.182709" stopColor="#0358F7"></stop>
+                <stop offset="0.283673" stopColor="#5092C7"></stop>
+                <stop offset="0.413484" stopColor="#E1ECFE"></stop>
+                <stop offset="0.586565" stopColor="#FFD400"></stop>
+                <stop offset="0.682722" stopColor="#FA3D1D"></stop>
+                <stop offset="0.802892" stopColor="#FD02F5"></stop>
+                <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
-      </div>
+      </section>
     </footer>
-  )
+  );
 }
