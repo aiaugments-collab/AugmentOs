@@ -10,14 +10,27 @@
 
 💡 Help us build the future of AI-powered browsing!
 
-## Quick start
+## How AugmentOS Works
 
-1. Build and install AugmentOS from source
+AugmentOS is built on Chromium with custom AI agent capabilities integrated directly into the browser. Here's how it works:
 
+### Architecture Overview
+- **Chromium Base**: Built on the latest Chromium source code for maximum compatibility
+- **AI Agent Engine**: Custom-built AI agent system that runs natively in the browser
+- **MCP Integration**: Model Context Protocol support for seamless AI tool integration
+- **Privacy Layer**: All AI processing happens locally or with your own API keys
+
+### Components
+- **Browser Core**: Modified Chromium with AI agent capabilities
+- **Landing Page**: Standalone Next.js marketing site (`/landing` directory)
+- **AI Extensions**: Custom browser extensions for AI functionality
+- **Agent Runtime**: Local AI agent execution environment
+
+## Quick Start
+
+1. Build and install AugmentOS from source (see build instructions below)
 2. Import your Chrome data (optional)
-
 3. Connect your AI provider (OpenAI, Anthropic, or local models via Ollama/LMStudio)
-
 4. Start automating!
 
 ## What makes AugmentOS special
@@ -69,6 +82,88 @@ Many loved Arc, but it was closed source. When they abandoned users, there was n
 <br>
 They're a search/ad company. Your browser history becomes their product. We keep everything local.
 </details>
+
+## Landing Page
+
+The `/landing` directory contains a standalone Next.js marketing/landing page that can be hosted independently on Vercel or any other hosting platform.
+
+### Deploying the Landing Page
+```bash
+cd landing
+npm install
+npm run build
+npm run start
+```
+
+For Vercel deployment:
+```bash
+cd landing
+vercel --prod
+```
+
+The landing page is completely independent and can be updated without affecting the main browser application.
+
+## Building AugmentOS
+
+### Prerequisites
+- Python 3.8+
+- Node.js 16+
+- Git
+- Platform-specific build tools (see below)
+
+### Build Instructions
+
+#### macOS
+```bash
+# Install Xcode command line tools
+xcode-select --install
+
+# Install depot_tools
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH="$PATH:/path/to/depot_tools"
+
+# Build AugmentOS
+cd packages/browseros
+./build_mac.sh
+```
+
+#### Windows
+```bash
+# Install Visual Studio Build Tools
+# Install Windows 10 SDK
+
+# Install depot_tools
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+set PATH=%PATH%;C:\path\to\depot_tools
+
+# Build AugmentOS
+cd packages/browseros
+build_win.bat
+```
+
+#### Linux
+```bash
+# Install build dependencies
+sudo apt-get update
+sudo apt-get install -y build-essential libnss3-dev libatk-bridge2.0-dev libdrm2 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libxss1 libasound2
+
+# Install depot_tools
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH="$PATH:/path/to/depot_tools"
+
+# Build AugmentOS
+cd packages/browseros
+./build_linux.sh
+```
+
+### Development Build
+For development and testing:
+```bash
+cd packages/browseros
+./dev_build.sh
+```
+
+This creates a development build with debugging enabled and faster compilation times.
 
 ## Contributing
 

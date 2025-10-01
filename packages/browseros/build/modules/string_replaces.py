@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-String replacement module for BrowserOS build system
+String replacement module for AugmentOS build system
 """
 
 import re
@@ -14,17 +14,17 @@ from utils import log_info, log_success, log_error, log_warning
 branding_replacements = [
     (
         r"The Chromium Authors. All rights reserved.",
-        r"The BrowserOS Authors. All rights reserved.",
+        r"The AugmentOS Authors. All rights reserved.",
     ),
     (
         r"Google LLC. All rights reserved.",
-        r"The BrowserOS Authors. All rights reserved.",
+        r"The AugmentOS Authors. All rights reserved.",
     ),
-    (r"The Chromium Authors", r"BrowserOS Software Inc"),
-    (r"Google Chrome", r"BrowserOS"),
-    (r"(Google)(?! Play)", r"BrowserOS"),
-    (r"Chromium", r"BrowserOS"),
-    (r"Chrome", r"BrowserOS"),
+    (r"The Chromium Authors", r"AugmentOS Software Inc"),
+    (r"Google Chrome", r"AugmentOS"),
+    (r"(Google)(?! Play)", r"AugmentOS"),
+    (r"Chromium", r"AugmentOS"),
+    (r"Chrome", r"AugmentOS"),
 ]
 
 # List of files to apply replacements to
